@@ -21,6 +21,6 @@ select * from Insta_pages
 select * from Insta_likes
 
 select page_id from Insta_pages 
-where page_id not in 
+	where page_id not in 
 	(select distinct page_id from Insta_likes) 
-order by page_id
+	order by page_id

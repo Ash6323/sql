@@ -24,5 +24,8 @@ select user_id, event_type, month(event_date) as month, rank() over (partition b
 	from facebook_user_actions where month(event_date) in (5,6)
 
 select month, count(distinct user_id) as monthly_active_users from
-	(select user_id, event_type, month(event_date) as month, rank() over (partition by user_id order by month(event_date)) as actions
-	from facebook_user_actions where month(event_date) in (5,6) and event_type in ('sign-in','like','comment')) as a where a.actions>1 group by month
+	(select user_id, event_type, month(event_date) as month, rank() 
+	over (partition by user_id order by month(event_date)) as actions
+	from facebook_user_actions 
+	where month(event_date) in (5,6) and event_type in ('sign-in','like','comment')) as a 
+	where a.actions>1 group by month

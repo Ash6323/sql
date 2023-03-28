@@ -26,4 +26,4 @@ from
 	(select distinct company_id from Job_listings 
 	group by company_id, title, description 
 	having count(*) >1) 
-as CompanyCount
+	as CompanyCount

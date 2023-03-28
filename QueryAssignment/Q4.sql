@@ -17,4 +17,4 @@ select user_id, spend from
 	(select user_id, spend, ROW_NUMBER() over 
 	(partition by user_id order by transaction_date) as RowNumber 
 	from Uber_transactions) as user_spend 
-where RowNumber = 3
+	where RowNumber = 3

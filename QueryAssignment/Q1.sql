@@ -16,5 +16,9 @@ insert Candidates values (200,'SQL')
 
 select * from Candidates
 
-select candidate_id from Candidates where skill in ('C#', 'MVC', 'SQL') group by candidate_id having count(candidate_id)>=3 order by candidate_id
+select candidate_id from Candidates 
+	where skill in ('C#', 'MVC', 'SQL') 
+	group by candidate_id 
+	having count(candidate_id)>=3 
+	order by candidate_id
 
